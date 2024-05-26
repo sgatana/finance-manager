@@ -10,6 +10,7 @@ import {
 import { ChartProps } from '.';
 import dayjs from 'dayjs';
 import ChartTooltip from './tooltip';
+import GradientComponent from './gradient';
 
 const TransactionsChart = ({ data }: ChartProps) => {
   return (
@@ -26,14 +27,8 @@ const TransactionsChart = ({ data }: ChartProps) => {
         >
           <CartesianGrid strokeDasharray='3 3' />
           <defs>
-            <linearGradient id='income' x1='0' y1='0' x2='0' y2='1'>
-              <stop offset='2%' stopColor='#a78bfa' stopOpacity={0.8} />
-              <stop offset='98%' stopColor='#a78bfa' stopOpacity={0} />
-            </linearGradient>
-            <linearGradient id='expenses' x1='0' y1='0' x2='0' y2='1'>
-              <stop offset='2%' stopColor='#f472b6' stopOpacity={0.8} />
-              <stop offset='98%' stopColor='#f472b6' stopOpacity={0} />
-            </linearGradient>
+            <GradientComponent id='income' stopColor='#a78bfa' />
+            <GradientComponent id='expenses' stopColor='#f472b6' />
           </defs>
           <XAxis
             dataKey='date'

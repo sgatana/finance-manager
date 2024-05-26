@@ -1,6 +1,7 @@
 import dayjs from 'dayjs';
 import { Separator } from '../ui/separator';
 import { formatCurrency } from '@/lib/utils';
+import TooltipCard from './tooltip-card';
 
 const ChartTooltip = ({ active, payload }: any) => {
   if (!active) return null;
@@ -10,30 +11,20 @@ const ChartTooltip = ({ active, payload }: any) => {
   const expenses = payload[1].value;
   return (
     <div className='rounded-sm bg-white shadow-sm overflow-hidden'>
-      <div className='px-3 text-sm'>{dayjs(date).format('MMM DD, YYYY')}</div>
+      <div className='px-3 py-1 text-sm'>
+        {dayjs(date).format('MMM DD, YYYY')}
+      </div>
       <Separator />
-      <div className='p-2 px-3 space-y-1'>
-        <div className='flex items-center justify-between gap-x-4'>
-          <div className='flex items-center gap-x-2'>
-            <div className='size-1.5 bg-indigo-500 rounded-full' />
-            <p className='text-sm text-muted-foreground'>Income</p>
-          </div>
-          <p className='text-sm test-right font-medium'>
-            {formatCurrency(income)}
-          </p>
-        </div>
-      </div>
-      <div className='p-2 px-3 space-y-1'>
-        <div className='flex items-center justify-between gap-x-4'>
-          <div className='flex items-center gap-x-2'>
-            <div className='size-1.5 bg-rose-500 rounded-full' />
-            <p className='text-sm text-muted-foreground'>Expenses</p>
-          </div>
-          <p className='text-sm test-right font-medium'>
-            {formatCurrency(expenses*-1)}
-          </p>
-        </div>
-      </div>
+      <TooltipCard
+        label='Income'
+        value={formatCurrency(income)}
+        className='bg-indigo-500'
+      />
+      <TooltipCard
+        label='Expenses'
+        value={formatCurrency(expenses * -1)}
+        className='bg-rose-500'
+      />
     </div>
   );
 };

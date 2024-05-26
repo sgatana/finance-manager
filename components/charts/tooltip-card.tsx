@@ -1,6 +1,14 @@
 import { cn } from '@/lib/utils';
 
-const TooltipCard = ({ value, label, className }: any) => {
+const TooltipCard = ({
+  value,
+  label,
+  className,
+}: {
+  value: string;
+  label: string;
+  className: string;
+}) => {
   return (
     <div className='p-2 px-3 space-y-1'>
       <div className='flex items-center justify-between gap-x-4'>

@@ -1,4 +1,4 @@
-Manage your finances with ease by using out finance manager app. 
+Manage your finances with ease by using our finance manager app. 
 
 ## Getting Started
 Clone the repo to run the app locally
