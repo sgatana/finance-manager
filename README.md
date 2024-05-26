@@ -19,10 +19,13 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+This project uses [`next.js v14`](https://nextjs.org).
 
 ### Images
-![Dashboard page](dashboard.png)
-![Transactions page](transactions.png)
-![Add Transaction Modal](add-transaction.png)
+- Dashboard / Overview
+![Dashboard](assets/dashboard.png)
+- Transactions page (Accounts and Categories pages uses same setup )
+![Transactions page](assets/transactions.png)
+- Add Transaction Modal
+![Add Transaction Modal](assets/add-transaction.png)
 
